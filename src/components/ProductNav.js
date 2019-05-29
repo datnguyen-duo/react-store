@@ -1,15 +1,21 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPagelines } from '@fortawesome/free-brands-svg-icons';
-import { faCartPlus } from '@fortawesome/free-solid-svg-icons';
+import {
+  faLongArrowAltLeft,
+  faCartPlus
+} from '@fortawesome/free-solid-svg-icons';
 
-export default class Navbar extends Component {
+export default class ProductNav extends Component {
   render() {
     return (
       <div className="navbar">
         <NavLink to="/">
-          <FontAwesomeIcon icon={faPagelines} color={'#6ea86e'} size="2x" />
+          <FontAwesomeIcon
+            icon={faLongArrowAltLeft}
+            color={'#6ea86e'}
+            size="2x"
+          />
         </NavLink>
         <NavLink to="/cart">
           <FontAwesomeIcon icon={faCartPlus} color={'#6ea86e'} size="lg" />

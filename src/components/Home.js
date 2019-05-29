@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-
 import { NavLink } from 'react-router-dom';
+import Navbar from './Navbar';
 
 class Home extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
   render() {
-    const { products, match } = this.props;
+    const { products } = this.props;
     return (
       <>
-        {Object.keys(products).map(id => {
+        <Navbar />
+        {products.map(product => {
           return (
-            <>
-              <NavLink key={id} to={`/projects/${id}`}>
-                {products[id].title}
-              </NavLink>
-            </>
+            <div>
+              <NavLink to={`products/${product.link}`}>{product.title}</NavLink>
+            </div>
           );
         })}
       </>

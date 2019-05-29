@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import ProductNav from './ProductNav';
 
 class Product extends Component {
   render() {
     const { match, products } = this.props;
-    console.log(products);
+    console.log(match);
+
     return (
       <>
-        <h1>{products[match.params.id].title}</h1>
+        <ProductNav />
+        <h1>{products.link}</h1>
       </>
     );
   }

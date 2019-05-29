@@ -2,17 +2,16 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Cart from './components/Cart';
-import products from './components/products.json';
+import products from './components/products';
+import Product from './components/Product';
 
 class App extends Component {
   render() {
     return (
       <div className="container">
         <Router>
-          <Navbar />
           <Route
             exact
             path="/"
@@ -21,9 +20,9 @@ class App extends Component {
             }}
           />
           <Route
-            path={`/products/:id`}
+            path={`/products/:link`}
             render={routerProps => {
-              return <Home {...routerProps} products={products} />;
+              return <Product {...routerProps} products={products} />;
             }}
           />
           <Route path="/cart" component={Cart} />
