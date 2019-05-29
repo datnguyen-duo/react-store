@@ -12,17 +12,11 @@ class App extends Component {
     return (
       <div className="container">
         <Router>
+          <Route exact path="/" component={Home} />
           <Route
-            exact
-            path="/"
-            render={routerProps => {
-              return <Home {...routerProps} products={products} />;
-            }}
-          />
-          <Route
-            path={`/products/:link`}
-            render={routerProps => {
-              return <Product {...routerProps} products={products} />;
+            path={`/products/:id`}
+            render={props => {
+              return <Product {...props} products={products} />;
             }}
           />
           <Route path="/cart" component={Cart} />

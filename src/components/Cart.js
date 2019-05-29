@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Navbar from './Navbar';
 
 class Cart extends Component {
   constructor(props) {
@@ -6,7 +7,12 @@ class Cart extends Component {
     this.state = {};
   }
   render() {
-    return <>Cart</>;
+    return (
+      <>
+        <Navbar />
+        Cart
+      </>
+    );
   }
 }
 

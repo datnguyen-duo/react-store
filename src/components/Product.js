@@ -9,7 +9,8 @@ class Product extends Component {
     return (
       <>
         <ProductNav />
-        <h1>{products.link}</h1>
+        <h1>{products[match.params.id].name}</h1>
+        <p>{products[match.params.id].description}</p>
       </>
     );
   }
