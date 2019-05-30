@@ -9,10 +9,10 @@ export default class Navbar extends Component {
     return (
       <div className="navbar">
         <NavLink to="/">
-          <FontAwesomeIcon icon={faPagelines} color={'#6ea86e'} size="2x" />
+          <FontAwesomeIcon icon={faPagelines} color={'#6ea86e'} size="3x" />
         </NavLink>
         <NavLink to="/cart">
-          <FontAwesomeIcon icon={faCartPlus} color={'#6ea86e'} size="lg" />
+          <FontAwesomeIcon icon={faCartPlus} color={'#6ea86e'} size="2x" />
         </NavLink>
       </div>
     );

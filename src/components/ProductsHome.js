@@ -5,18 +5,19 @@ import products from '../components/products';
 class ProductsHome extends Component {
   render() {
     return (
-      <>
+      <div className="section">
+        <div className="bg" />
         {products.map(product => {
           return (
-            <div className="prod-container" key={product.id}>
+            <div className="slide" key={product.id}>
               <NavLink to={`products/${product.id}`}>
-                <img src={product.img} alt="" />
+                <img src={product.img} alt="item" />
                 {product.name}
               </NavLink>
             </div>
           );
         })}
-      </>
+      </div>
     );
   }
 }

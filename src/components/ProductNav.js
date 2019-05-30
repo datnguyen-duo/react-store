@@ -14,11 +14,11 @@ export default class ProductNav extends Component {
           <FontAwesomeIcon
             icon={faLongArrowAltLeft}
             color={'#6ea86e'}
-            size="2x"
+            size="3x"
           />
         </NavLink>
         <NavLink to="/cart">
-          <FontAwesomeIcon icon={faCartPlus} color={'#6ea86e'} size="lg" />
+          <FontAwesomeIcon icon={faCartPlus} color={'#6ea86e'} size="2x" />
         </NavLink>
       </div>
     );
