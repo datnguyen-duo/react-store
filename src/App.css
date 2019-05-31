@@ -1,3 +1,12 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 html,
 body {
   font-family: 'Ubuntu';
@@ -32,7 +41,7 @@ img {
 }
 
 .navbar {
-  width: 80%;
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -53,7 +62,7 @@ img {
 .bg {
   position: fixed;
   bottom: 0;
-  height: 15%;
+  height: 20%;
   background: #d3e6d3;
   width: 100%;
   border-radius: 50px 50px 0 0;
@@ -62,6 +71,7 @@ img {
 #about {
   background: #d3e6d3;
   margin: 0 auto;
+  animation: fadeIn 1.5s;
 }
 
 #about h1 {
@@ -82,15 +92,15 @@ img {
   opacity: 0.5;
 }
 
-#about .scroll {
+#about #scroll {
   border: 0.5px solid #6ea86e;
   width: 0;
-  height: 170px;
+  height: 20vh;
   position: absolute;
   bottom: 0;
 }
 
-#about .scroll:before {
+#about #scroll:before {
   content: 'Scroll';
   top: -25px;
   position: absolute;
