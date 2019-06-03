@@ -18,7 +18,19 @@ h1 {
   text-align: center;
   font-size: 8em;
   z-index: 1;
-  color: #6ea86e;
+  color: #fff;
+}
+
+h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 3em;
+}
+
+h3 {
+  margin: 0 0 2em;
+  color: #494949;
+  font-style: italic;
 }
 
 a {
@@ -27,8 +39,18 @@ a {
   text-align: center;
 }
 
+button {
+  padding: 10px;
+  background: none;
+  border: none;
+  margin: 0;
+  margin-bottom: -3px;
+  z-index: 13;
+}
+
 img {
   width: 400px;
+  height: 400px;
 }
 
 .container {
@@ -50,32 +72,26 @@ img {
   z-index: 2;
 }
 
+.section .home-prod {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
 .section div a {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 800px;
   margin: 0 auto;
-}
-
-.bg {
-  position: fixed;
-  bottom: 0;
-  height: 20%;
-  background: #d3e6d3;
-  width: 100%;
-  border-radius: 50px 50px 0 0;
+  width: 400px;
 }
 
 #about {
   background: #d3e6d3;
   margin: 0 auto;
   animation: fadeIn 1.5s;
-}
-
-#about h1 {
-  color: #fff;
 }
 
 #about div {
@@ -86,10 +102,11 @@ img {
 
 #about img {
   width: 480px;
+  height: initial;
   position: absolute;
   display: flex;
   margin: 0 auto;
-  opacity: 0.5;
+  opacity: 0.6;
 }
 
 #about #scroll {
@@ -105,6 +122,17 @@ img {
   top: -25px;
   position: absolute;
   color: #000;
+}
+
+.bg {
+  width: 500px;
+  height: 500px;
+  position: fixed;
+  display: flex;
+  background: #d3e6d3;
+  border-radius: 10px;
+  justify-content: flex-end;
+  align-items: flex-end;
 }
 
 .fp-controlArrow.fp-prev,
@@ -145,4 +173,55 @@ img {
 .fp-controlArrow.fp-next::after {
   content: 'Next';
   right: 115px;
+}
+
+.slide .content {
+  text-align: center;
+  position: absolute;
+  width: 16.6667%;
+}
+
+.slide .content h1 {
+  font-size: 5em;
+
+  margin: 1em 0 0;
+  color: #6ea86e;
+}
+
+.slide .content h4 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.prod-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  height: 100vh;
+}
+
+.prod-container img {
+  width: 500px;
+  height: initial;
+}
+
+.prod-container .info {
+  width: 20%;
+  padding: 2em;
+  margin-left: 5em;
+  background: #d3e6d3;
+}
+
+.prod-container h1 {
+  margin-bottom: 0;
+  color: #6ea86e;
+  width: 220%;
+  font-size: 7.5em;
+  text-align: left;
+}
+
+.prod-container .info .cart-action {
+  display: flex;
+  justify-content: space-between;
 }
