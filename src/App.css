@@ -250,7 +250,7 @@ img {
 }
 
 .modal {
-  padding: 2em 5em 5em;
+  padding: 2em 5em;
   background: #fff;
   border-radius: 10px;
   box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
@@ -275,6 +275,24 @@ img {
 .modal-content .button-wrapper {
   width: 100%;
   display: flex;
+  margin-top: 3em;
   justify-content: center;
   align-items: center;
+}
+
+.modal-content .button-wrapper button,
+.modal-content .button-wrapper a {
+  font-size: 14px;
+  padding: 1em 2em;
+  margin: 0;
+  border: #6ea86e 2px solid;
+  color: #6ea86e;
+  font-weight: 700;
+  font-family: 'Ubuntu';
+  margin: 0 1em;
+}
+
+.modal-content .button-wrapper a {
+  color: #fff;
+  background: #6ea86e;
 }

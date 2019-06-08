@@ -94,8 +94,8 @@ class Product extends Component {
               <img src={products[match.params.id].img} alt="product-img" />
               <h4>{products[match.params.id].name} has been added to cart!</h4>
               <div className="button-wrapper">
-                <button>Keep Shopping</button>
-                <Link to="/cart">Go To Cart</Link>
+                <button onClick={this.closeModal}>KEEP SHOPPING</button>
+                <Link to="/cart">GO TO CART</Link>
               </div>
             </div>
           </Modal>
