@@ -7,22 +7,31 @@ import { addToCart } from './actions/cartActions';
 
 class ProductsHome extends Component {
   handleClick = id => {
+    alert('Added to cart');
     this.props.addToCart(id);
   };
   render() {
+    const style = {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100%'
+    };
     const itemList = this.props.products.map(product => {
       return (
-        <div>
+        <div style={style}>
+          <div className="bg" />
           <div className="slide" key={product.id}>
-            <button onClick={() => this.handleClick(product.id)}>
-              <FontAwesomeIcon icon={faPlus} />
-            </button>
             <NavLink to={`products/${product.id}`}>
               <img src={product.img} alt="product-img" />
             </NavLink>
             <div className="content">
               <h1>{product.name}</h1>
-              <h4>{product.price}</h4>
+              <button onClick={() => this.handleClick(product.id)}>
+                <h3>
+                  Quick Add <FontAwesomeIcon icon={faPlus} />
+                </h3>
+              </button>
             </div>
           </div>
         </div>

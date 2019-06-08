@@ -1,6 +1,6 @@
 import {
   ADD_TO_CART,
-  REMOVE_ITEM,
+  REMOVE_PRODUCT,
   SUB_QUANTITY,
   ADD_QUANTITY
 } from './action-types/cart-actions';
@@ -11,9 +11,9 @@ export const addToCart = id => {
     id
   };
 };
-export const removeItem = id => {
+export const removeProduct = id => {
   return {
-    type: REMOVE_ITEM,
+    type: REMOVE_PRODUCT,
     id
   };
 };

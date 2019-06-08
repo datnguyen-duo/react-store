@@ -9,7 +9,7 @@ import Product from './components/Product';
 
 function App() {
   return (
-    <div className="container">
+    <div id="container">
       <Router>
         <Route exact path="/" component={Home} />
         <Route

@@ -31,6 +31,7 @@ h3 {
   margin: 0 0 2em;
   color: #494949;
   font-style: italic;
+  font-size: 1.5em;
 }
 
 a {
@@ -39,13 +40,28 @@ a {
   text-align: center;
 }
 
+ul {
+  list-style: none;
+  padding: 0;
+  column-count: 2;
+  margin-top: 2em;
+}
+
+ul li {
+  margin: 0 0 5px;
+}
+
+strong {
+  color: #494949;
+}
 button {
   padding: 10px;
   background: none;
   border: none;
   margin: 0;
   margin-bottom: -3px;
-  z-index: 13;
+  z-index: 1;
+  cursor: pointer;
 }
 
 img {
@@ -53,7 +69,7 @@ img {
   height: 400px;
 }
 
-.container {
+#container {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -131,8 +147,6 @@ img {
   display: flex;
   background: #d3e6d3;
   border-radius: 10px;
-  justify-content: flex-end;
-  align-items: flex-end;
 }
 
 .fp-controlArrow.fp-prev,
@@ -182,9 +196,8 @@ img {
 }
 
 .slide .content h1 {
+  margin: 0;
   font-size: 5em;
-
-  margin: 1em 0 0;
   color: #6ea86e;
 }
 
@@ -224,4 +237,44 @@ img {
 .prod-container .info .cart-action {
   display: flex;
   justify-content: space-between;
+}
+
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal {
+  padding: 2em 5em 5em;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 50px 100px -20px rgba(50, 50, 93, 0.25),
+    0 30px 60px -30px rgba(0, 0, 0, 0.3),
+    0 -18px 60px -10px rgba(0, 0, 0, 0.025);
+  max-width: 500px;
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.modal-content img {
+  width: 150px;
+  height: initial;
+  margin-right: 2em;
+}
+
+.modal-content .button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
