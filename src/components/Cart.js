@@ -37,7 +37,9 @@ class Cart extends Component {
               <img src={product.img} alt="product-img" />
             </div>
             <div className="cart-content">
-              <h2>{product.name}</h2>
+              <Link to={`/products/${product.id}`}>
+                <h2>{product.name}</h2>
+              </Link>
               <h3>${product.price}</h3>
               <h4>
                 Qty: {product.quantity}{' '}
@@ -130,7 +132,7 @@ class Cart extends Component {
                 <input type="text" />
               </label>
               <label>
-                CCV
+                CVV
                 <input type="text" />
               </label>
               <button>BUY</button>
