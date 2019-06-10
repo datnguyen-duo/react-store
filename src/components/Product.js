@@ -16,6 +16,7 @@ class Product extends Component {
     };
   }
   handleClick = id => {
+    document.documentElement.scrollTop = 0;
     this.props.addToCart(id);
     this.setState({
       modalIsOpen: true

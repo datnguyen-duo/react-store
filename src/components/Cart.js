@@ -95,19 +95,19 @@ class Cart extends Component {
 
               <label>
                 Cardholder Name
-                <input type="text" />
+                <input disabled type="text" />
               </label>
               <label>
                 Card Number
-                <input type="text" />
+                <input disabled type="text" />
               </label>
               <label>
                 Exp Date
-                <input type="text" />
+                <input disabled type="text" />
               </label>
               <label>
                 CVV
-                <input type="text" />
+                <input disabled type="text" />
               </label>
               <button>BUY</button>
             </form>
