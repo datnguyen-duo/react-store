@@ -34,22 +34,15 @@ class Cart extends Component {
         return (
           <div className="cart-product" key={product.id}>
             <div>
-              <img src={product.img} alt="product-img" />
+              <Link to={`/products/${product.id}`}>
+                <img src={product.img} alt="product-img" />
+              </Link>
             </div>
             <div className="cart-content">
               <Link to={`/products/${product.id}`}>
                 <h2>{product.name}</h2>
               </Link>
-              <h3>${product.price}</h3>
-              <h4>
-                Qty: {product.quantity}{' '}
-                <button
-                  onClick={() => {
-                    this.handleAddQuantity(product.id);
-                  }}
-                >
-                  <FontAwesomeIcon icon={faPlus} />
-                </button>
+              <div className="quantity">
                 <button
                   onClick={() => {
                     this.handleSubtractQuantity(product.id);
@@ -57,7 +50,16 @@ class Cart extends Component {
                 >
                   <FontAwesomeIcon icon={faMinus} />
                 </button>
-              </h4>
+                <h4>{product.quantity}</h4>
+                <button
+                  onClick={() => {
+                    this.handleAddQuantity(product.id);
+                  }}
+                >
+                  <FontAwesomeIcon icon={faPlus} />
+                </button>
+              </div>
+              <h3>${product.price}</h3>
             </div>
             <button
               className="remove-btn"
@@ -67,34 +69,6 @@ class Cart extends Component {
             >
               <FontAwesomeIcon icon={faTrashAlt} />
             </button>
-            {/* {product.name}
-            <h4>{product.quantity}</h4>
-
-            <button
-              onClick={() => {
-                this.handleRemove(product.id);
-              }}
-            >
-              <FontAwesomeIcon icon={faTrashAlt} />
-            </button>
-            <Link to="/cart">
-              <button
-                onClick={() => {
-                  this.handleAddQuantity(product.id);
-                }}
-              >
-                <FontAwesomeIcon icon={faPlus} />
-              </button>
-            </Link>
-            <Link to="/cart">
-              <button
-                onClick={() => {
-                  this.handleSubtractQuantity(product.id);
-                }}
-              >
-                <FontAwesomeIcon icon={faMinus} />
-              </button>
-            </Link> */}
           </div>
         );
       })
