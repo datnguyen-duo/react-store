@@ -23,12 +23,6 @@ class Product extends Component {
     });
   };
 
-  handleChange = e => {
-    this.setState({
-      quantity: e.target.value
-    });
-  };
-
   closeModal = () => {
     this.setState({
       modalIsOpen: false
