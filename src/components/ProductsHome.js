@@ -4,11 +4,41 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { connect } from 'react-redux';
 import { addToCart } from './actions/cartActions';
+import { Link } from 'react-router-dom';
+
+import Modal from 'react-modal';
 
 class ProductsHome extends Component {
+  constructor() {
+    super();
+    this.state = {
+      modalIsOpen: false
+    };
+  }
+
   handleClick = id => {
     this.props.addToCart(id);
-    alert('Added to cart');
+    this.setState({
+      modalIsOpen: true
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      modalIsOpen: false
+    });
+  };
+
+  afterOpenModal = () => {
+    document
+      .getElementById('container')
+      .setAttribute('style', 'opacity: .7; filter: blur(3px)');
+  };
+
+  afterCloseModal = () => {
+    document
+      .getElementById('container')
+      .setAttribute('style', 'opacity: 1; filter: blur(0)');
   };
 
   render() {
@@ -18,6 +48,7 @@ class ProductsHome extends Component {
       justifyContent: 'center',
       height: '100%'
     };
+
     const itemList = this.props.products.map(product => {
       return (
         <div style={style}>
@@ -38,7 +69,29 @@ class ProductsHome extends Component {
         </div>
       );
     });
-    return <div className="section">{itemList}</div>;
+    return (
+      <div className="section">
+        {itemList}
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          onAfterOpen={this.afterOpenModal}
+          onAfterClose={this.afterCloseModal}
+          contentLabel="modal"
+          className="modal"
+          overlayClassName="modal-overlay"
+          shouldCloseOnOverlayClick={true}
+        >
+          <div className="modal-content">
+            <h4>Added to cart</h4>
+            <div className="button-wrapper">
+              <button onClick={this.closeModal}>KEEP SHOPPING</button>
+              <Link to="/cart">GO TO CART</Link>
+            </div>
+          </div>
+        </Modal>
+      </div>
+    );
   }
 }
 
